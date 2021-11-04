@@ -1,0 +1,1 @@
+C:/lscc/radiant/2.2/bin/nt64/moduleparser.exe -PROJ test_topmodule -pf C:/lscc/radiant/2.2/cae_library/synthesis/vhdl/iCE40UP.vhd -lib iCE40UP -lst C:/lscc/radiant/2.2/projects/sinewave_generator/test_topmodule/source_files.lst

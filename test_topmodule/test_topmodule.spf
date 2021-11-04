@@ -1,0 +1,13 @@
+<RadiantSimulationProject name="test_topmodule" stage="0" simType="ModelSim" path="." language="1" version="2.0">
+    <Source worklib="work" type="VERILOG" include="none" path="source/impl_1/clock_devider.v"/>
+    <Source worklib="work" type="VERILOG" include="none" path="RAM_LUT/rtl/RAM_LUT.v"/>
+    <Source worklib="work" type="VERILOG" include="none" path="source/impl_1/pwm.v"/>
+    <Source worklib="work" type="VERILOG" include="none" path="source/impl_1/write_sine.v"/>
+    <Source worklib="work" type="VERILOG" include="none" path="source/impl_1/sine_gen.v"/>
+    <Source worklib="work" type="VERILOG" include="none" path="source/impl_1/top.v"/>
+    <Source worklib="work" type="VERILOG" include="none" path="source/impl_1/tb_top.v"/>
+    <SimLib value="pmi_work ovi_ice40up"/>
+    <GlbInc value=""/>
+    <Macro value=""/>
+    <TopModule name="tb_top" instance="" language="VERILOG"/>
+</RadiantSimulationProject>

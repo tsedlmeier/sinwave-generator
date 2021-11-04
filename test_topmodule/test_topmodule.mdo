@@ -1,0 +1,28 @@
+if {![file exists "C:/lscc/radiant/2.2/projects/sinewave_generator/test_topmodule/test_topmodule.mpf"]} { 
+	project new "C:/lscc/radiant/2.2/projects/sinewave_generator/test_topmodule" test_topmodule
+	project addfile "C:/lscc/radiant/2.2/projects/sinewave_generator/source/impl_1/clock_devider.v"
+	project addfile "C:/lscc/radiant/2.2/projects/sinewave_generator/RAM_LUT/rtl/RAM_LUT.v"
+	project addfile "C:/lscc/radiant/2.2/projects/sinewave_generator/source/impl_1/pwm.v"
+	project addfile "C:/lscc/radiant/2.2/projects/sinewave_generator/source/impl_1/write_sine.v"
+	project addfile "C:/lscc/radiant/2.2/projects/sinewave_generator/source/impl_1/sine_gen.v"
+	project addfile "C:/lscc/radiant/2.2/projects/sinewave_generator/source/impl_1/top.v"
+	project addfile "C:/lscc/radiant/2.2/projects/sinewave_generator/source/impl_1/tb_top.v"
+	vlib  work
+	vdel -lib work -all 
+	vlib work
+
+    vlog  +incdir+C:/lscc/radiant/2.2/projects/sinewave_generator/source/impl_1 +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP -work work  "C:/lscc/radiant/2.2/projects/sinewave_generator/source/impl_1/clock_devider.v"
+    vlog  +incdir+C:/lscc/radiant/2.2/projects/sinewave_generator/RAM_LUT/rtl +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP -work work  "C:/lscc/radiant/2.2/projects/sinewave_generator/RAM_LUT/rtl/RAM_LUT.v"
+    vlog  +incdir+C:/lscc/radiant/2.2/projects/sinewave_generator/source/impl_1 +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP -work work  "C:/lscc/radiant/2.2/projects/sinewave_generator/source/impl_1/pwm.v"
+    vlog  +incdir+C:/lscc/radiant/2.2/projects/sinewave_generator/source/impl_1 +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP -work work  "C:/lscc/radiant/2.2/projects/sinewave_generator/source/impl_1/write_sine.v"
+    vlog  +incdir+C:/lscc/radiant/2.2/projects/sinewave_generator/source/impl_1 +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP -work work  "C:/lscc/radiant/2.2/projects/sinewave_generator/source/impl_1/sine_gen.v"
+    vlog  +incdir+C:/lscc/radiant/2.2/projects/sinewave_generator/source/impl_1 +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP -work work  "C:/lscc/radiant/2.2/projects/sinewave_generator/source/impl_1/top.v"
+    vlog  +incdir+C:/lscc/radiant/2.2/projects/sinewave_generator/source/impl_1 +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP -work work  "C:/lscc/radiant/2.2/projects/sinewave_generator/source/impl_1/tb_top.v"
+} else {
+	project open "C:/lscc/radiant/2.2/projects/sinewave_generator/test_topmodule/test_topmodule"
+	project compileoutofdate
+}
+vsim   -L work  tb_top  -L pmi_work -L ovi_ice40up
+view wave
+add wave /*
+run 1000ns
