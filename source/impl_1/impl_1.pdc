@@ -1,0 +1,6 @@
+ldc_set_location -site {25} [get_ports taster_reset]
+ldc_set_location -site {35} [get_ports clk12M]
+ldc_set_location -site {39} [get_ports BLU]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS33 DRIVE=NA PULLMODE=100K} [get_ports taster_reset]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS33 DRIVE=NA PULLMODE=100K} [get_ports clk12M]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS33 DRIVE=8 PULLMODE=NA} [get_ports BLU]
